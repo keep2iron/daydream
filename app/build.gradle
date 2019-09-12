@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion versions.build.target_sdk
+    buildToolsVersion versions.build.build_tools
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion versions.build.target_sdk
+
+        applicationId "io.github.keep2iron.daydream"
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    buildTypes {
+        debug {}
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+
+    //support
+    implementation deps.support.app_compat
+    implementation deps.support.constraint_layout
+
+    implementation deps.rxjava2
+    implementation deps.rx_android
+    implementation deps.kotlin.stdlib_jdk7
+
+    implementation('io.github.keep2iron:fast4android-compat:0.0.1'){
+        changing = true
+    }
+    implementation('io.github.keep2iron:fast4android-arch:0.0.1'){
+        changing = true
+    }
+    implementation('io.github.keep2iron:fast4android-tabsegment:0.0.1'){
+        changing = true
+    }
+
+    implementation('io.github.keep2iron:pomelo-core:0.0.1'){
+        changing = true
+    }
+    implementation('io.github.keep2iron:pomelo-extra:0.0.1'){
+        changing = true
+    }
+    implementation('io.github.keep2iron:pomelo-log:0.0.1'){
+        changing = true
+    }
+    implementation 'com.orhanobut:logger:2.2.0'
+
+    testImplementation deps.test.junit
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+}
+
