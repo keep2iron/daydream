@@ -1,3 +1,7 @@
 <resources>
-  <string name="app_name">DayDream</string>
+    <string name="app_name">DayDream</string>
+
+    <string name="hot_movie">热门电影</string>
+
+    <string name="hot_rank">热门榜单</string>
 </resources>

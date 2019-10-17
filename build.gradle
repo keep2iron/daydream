@@ -24,7 +24,7 @@ configurations.all {
 allprojects {
     repositories {
         maven {
-            url "$rootDir/../../../maven-local"
+            url "$rootDir/../maven-local"
         }
     }
     addRepos(repositories)

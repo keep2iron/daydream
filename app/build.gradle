@@ -53,16 +53,24 @@ dependencies {
         changing = true
     }
 
-    implementation('io.github.keep2iron:pomelo-core:0.0.1'){
+    implementation('io.github.keep2iron:pomelo-core:0.0.2-alpha'){
         changing = true
     }
-    implementation('io.github.keep2iron:pomelo-extra:0.0.1'){
+    implementation('io.github.keep2iron:pomelo-extra:0.0.2-alpha'){
         changing = true
     }
-    implementation('io.github.keep2iron:pomelo-log:0.0.1'){
+    implementation('io.github.keep2iron:pomelo-log:0.0.2-alpha'){
         changing = true
     }
+    //fresco version
+    implementation 'io.github.keep2iron:pineapple-fresco:0.0.1-fix2'
+
+    //Since pineapple does not integrate fresco versions internally, it needs to integrate itself.
+    implementation 'com.facebook.fresco:fresco:2.0.0'
     implementation 'com.orhanobut:logger:2.2.0'
+    implementation 'com.airbnb.android:lottie:3.1.0'
+    implementation deps.retrofit.adapter
+    implementation group: 'androidx.palette', name: 'palette', version: '1.0.0'
 
     testImplementation deps.test.junit
     androidTestImplementation 'androidx.test:runner:1.1.0'

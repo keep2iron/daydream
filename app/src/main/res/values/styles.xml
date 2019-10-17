@@ -1,11 +1,24 @@
 <resources>
 
-  <!-- Base application theme. -->
-  <style name="AppTheme" parent="Fast.Compat.NoActionBar">
-    <!-- Customize your theme here. -->
-    <item name="colorPrimary">@color/colorPrimary</item>
-    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-    <item name="colorAccent">@color/colorAccent</item>
-  </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Fast.Compat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="PomeloPageStateLayoutStyle">
+        <item name="pomelo_layout_loading">@layout/activity_main</item>
+    </style>
+
+    <style name="FastTextAppearance.Title">
+        <item name="android:textColor">@color/fast_config_color_gray_1</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="FastTextAppearance.Title.Large">
+        <item name="android:textSize">20sp</item>
+    </style>
 
 </resources>

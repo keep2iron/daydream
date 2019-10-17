@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<io.github.keep2iron.fast4android.core.alpha.FastAlphaFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:clickable="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <io.github.keep2iron.pineapple.MiddlewareView
+            android:id="@+id/middlewareView"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#40000000"
+            app:layout_constraintBottom_toBottomOf="@+id/middlewareView"
+            app:layout_constraintLeft_toLeftOf="@+id/middlewareView"
+            app:layout_constraintRight_toRightOf="@+id/middlewareView"
+            app:layout_constraintTop_toTopOf="@+id/middlewareView" />
+
+        <TextView
+            android:id="@+id/tvRankTitle"
+            style="@style/FastTextAppearance.Title.Large"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/fast_config_color_white"
+            app:layout_constraintBottom_toBottomOf="@+id/middlewareView"
+            app:layout_constraintStart_toStartOf="@+id/middlewareView"
+            tools:text="一周口碑电影榜" />
+
+        <LinearLayout
+            android:id="@+id/rankListContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@+id/middlewareView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</io.github.keep2iron.fast4android.core.alpha.FastAlphaFrameLayout>
