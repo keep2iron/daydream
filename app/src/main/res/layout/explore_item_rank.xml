@@ -7,22 +7,22 @@
 
     <io.github.keep2iron.fast4android.core.alpha.FastAlphaRoundTextView
         style="@style/FastTextAppearance.Title.Large"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/fast_content_spacing_horizontal"
         android:layout_marginLeft="@dimen/fast_content_spacing_horizontal"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:drawableLeft="@drawable/ic_rank_ico"
+        android:drawableRight="@drawable/ic_rank_ico"
         android:drawablePadding="8dp"
         android:text="@string/hot_rank"
-        app:fast_drawableLeftHeight="25dp"
-        app:fast_drawableLeftTint="@color/fast_config_color_gray_1"
-        app:fast_drawableLeftWidth="25dp" />
+        app:fast_drawableRightHeight="25dp"
+        app:fast_drawableRightTint="@color/fast_config_color_gray_1"
+        app:fast_drawableRightWidth="25dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="500dp" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

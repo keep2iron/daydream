@@ -6,19 +6,20 @@
     android:orientation="vertical">
 
     <io.github.keep2iron.fast4android.core.alpha.FastAlphaRoundTextView
+        android:id="@+id/tvTitle"
         style="@style/FastTextAppearance.Title.Large"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/fast_content_spacing_horizontal"
         android:layout_marginLeft="@dimen/fast_content_spacing_horizontal"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:drawableLeft="@drawable/ic_movie_ico"
+        android:drawableRight="@drawable/ic_top_ico"
         android:drawablePadding="8dp"
         android:text="@string/hot_movie"
-        app:fast_drawableLeftHeight="23dp"
-        app:fast_drawableLeftTint="@color/fast_config_color_gray_1"
-        app:fast_drawableLeftWidth="23dp" />
+        app:fast_drawableRightHeight="23dp"
+        app:fast_drawableRightTint="@color/fast_config_color_gray_1"
+        app:fast_drawableRightWidth="23dp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

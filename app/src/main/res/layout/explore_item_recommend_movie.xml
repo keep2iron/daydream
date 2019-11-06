@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingTop="8dp">
+
+    <io.github.keep2iron.fast4android.core.alpha.FastAlphaFrameLayout
+        android:id="@+id/middleImageViewLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/fast_content_spacing_horizontal"
+        android:layout_marginRight="@dimen/fast_content_spacing_horizontal"
+        app:layout_constraintDimensionRatio="0.618:1"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/viewPagerLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <io.github.keep2iron.pineapple.MiddlewareView
+            android:id="@+id/middleImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </io.github.keep2iron.fast4android.core.alpha.FastAlphaFrameLayout>
+
+    <io.github.keep2iron.fast4android.core.alpha.FastAlphaFrameLayout
+        android:id="@+id/viewPagerLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="@dimen/fast_content_spacing_horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/middleImageViewLayout"
+        app:layout_constraintHorizontal_weight="2.3"
+        app:layout_constraintLeft_toRightOf="@+id/middleImageViewLayout"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/middleImageViewLayout">
+
+        <io.github.keep2iron.looplayout.FastLoopLayout
+            android:id="@+id/looperLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:fast_indicator_drawable_select_tint="@color/fast_config_color_blue"
+            app:fast_indicator_drawable_unSelect_tint="@color/fast_config_color_white"
+            app:fast_indicator_id="@id/looperIndicator">
+
+            <LinearLayout
+                android:id="@+id/looperIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal" />
+
+        </io.github.keep2iron.looplayout.FastLoopLayout>
+
+    </io.github.keep2iron.fast4android.core.alpha.FastAlphaFrameLayout>
+
+    <TextView
+        android:id="@+id/tvMovieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:textAppearance="@style/FastTextAppearance.Title.Large"
+        app:layout_constraintStart_toStartOf="@+id/middleImageViewLayout"
+        app:layout_constraintTop_toBottomOf="@+id/middleImageViewLayout"
+        tools:text="头号玩家" />
+
+    <TextView
+        android:id="@+id/tvMovieDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/fast_content_spacing_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/fast_content_spacing_horizontal"
+        android:ellipsize="end"
+        android:lineSpacingExtra="10sp"
+        android:maxLines="2"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvMovieTitle"
+        tools:text="《天气之子》（日语：天気の子，英语：Weathering With You）是日本动画家新海诚编剧并执导的动画电影，于2019年7月19日在日本上映。这是新海诚继《你的名字。》后时隔三年的又一部动画电影，也是他的第七部及进入令和时代后的首部动画电影[3][4][5]，更获得代表日本角逐第92届奥斯卡最佳国际影片奖的资格[6]。" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

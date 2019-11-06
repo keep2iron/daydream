@@ -8,11 +8,14 @@ buildscript {
         classpath deps.android_gradle_plugin
         classpath deps.kotlin_gradle_plugin
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        classpath 'com.iqiyi.android.qigsaw:gradle-plugin:1.1.4'
+
         repositories {
             google()
-            maven {
-                url 'http://maven.aliyun.com/nexus/content/groups/public/'
-            }
+            jcenter()
+//            maven {
+//                url 'http://maven.aliyun.com/nexus/content/groups/public/'
+//            }
         }
     }
 }

@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Fast.Compat.NoActionBar">
@@ -6,14 +6,33 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/colorPrimary</item>
+        <item name="android:textViewStyle">@style/FastTextAppearance</item>
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+
+        <!-- enable window content transitions -->
+        <item name="android:windowActivityTransitions" tools:targetApi="lollipop">true</item>
+
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition" tools:targetApi="lollipop">@transition/fade_in
+        </item>
+        <item name="android:windowReturnTransition" tools:targetApi="lollipop">
+            @transition/fade_out
+        </item>
+        <item name="android:windowExitTransition" tools:targetApi="lollipop">@transition/fade_out
+        </item>
     </style>
 
     <style name="PomeloPageStateLayoutStyle">
         <item name="pomelo_layout_loading">@layout/activity_main</item>
     </style>
 
+    <style name="FastTextAppearance">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
     <style name="FastTextAppearance.Title">
-        <item name="android:textColor">@color/fast_config_color_gray_1</item>
+        <item name="android:textColor">#ffffff</item>
         <item name="android:textStyle">bold</item>
     </style>
 

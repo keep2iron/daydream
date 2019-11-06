@@ -1,29 +1,38 @@
 package io.github.keep2iron.daydream
 
-import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import android.widget.FrameLayout
 import android.widget.TextView
+import androidx.core.content.ContextCompat
+import androidx.core.view.ViewCompat
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
-import com.orhanobut.logger.Logger
+import io.github.keep2iron.base.util.setPaddingTop
+import io.github.keep2iron.base.util.setStatusBarDark
 import io.github.keep2iron.daydream.ui.explore.ExploreFragment
 import io.github.keep2iron.fast4android.arch.AbstractActivity
-import io.github.keep2iron.fast4android.arch.FindViewById
+import io.github.keep2iron.fast4android.arch.util.findViewByDelegate
 import io.github.keep2iron.fast4android.tabsegment.FastTabSegmentLayout
 import io.github.keep2iron.fast4android.tabsegment.TextFastTabSegmentAdapter
 import kotlin.math.ceil
 
 class MainActivity : AbstractActivity<ViewDataBinding>() {
-    private val viewPager: ViewPager by FindViewById(R.id.viewPager)
+    private val viewPager: ViewPager by findViewByDelegate(R.id.viewPager)
 
-    private val tabSegmentLayout: FastTabSegmentLayout by FindViewById(R.id.tabSegmentLayout)
+    private val tabContainer: FrameLayout by findViewByDelegate(R.id.tabContainer)
+
+    private val tabSegmentLayout: FastTabSegmentLayout by findViewByDelegate(R.id.tabSegmentLayout)
 
     override fun initVariables(savedInstanceState: Bundle?) {
+        setStatusBarDark()
         initViewPager()
+
+        ViewCompat.setOnApplyWindowInsetsListener(tabContainer) { v, insets ->
+            v.setPaddingTop(insets.systemWindowInsetTop)
+            insets
+        }
     }
 
     private fun initViewPager() {
@@ -98,7 +107,6 @@ class MainTextTabAdapter(
     }
 
     override fun onPageSelected(position: Int) {
-//        this.pageSelectPosition = position
     }
 
 }

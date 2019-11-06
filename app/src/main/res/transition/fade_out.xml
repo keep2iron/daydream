@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<transitionSet xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <fade
+        android:duration="500"
+        android:fadingMode="fade_out"
+        android:interpolator="@android:interpolator/accelerate_decelerate"
+        tools:targetApi="kitkat">
+    </fade>
+</transitionSet>

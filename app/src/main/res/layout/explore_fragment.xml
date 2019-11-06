@@ -13,7 +13,8 @@
         <io.github.keep2iron.pomelo.state.PomeloPageStateLayout
             android:id="@+id/pageStateLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            app:pomelo_layout_loading="@layout/common_layout_loading">
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

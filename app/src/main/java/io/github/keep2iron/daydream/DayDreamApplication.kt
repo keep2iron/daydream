@@ -4,6 +4,8 @@ import android.app.Application
 import com.orhanobut.logger.AndroidLogAdapter
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
+import io.github.keep2iron.fast4android.arch.swipe.ParallaxBackApplicationTask
+import io.github.keep2iron.fast4android.core.DefaultLogger
 import io.github.keep2iron.fast4android.core.Fast4Android
 import io.github.keep2iron.pineapple.ImageLoaderManager
 import io.github.keep2iron.pomelo.NetworkManager
@@ -19,7 +21,10 @@ class DayDreamApplication : Application() {
     override fun onCreate() {
         super.onCreate()
 
-        Fast4Android.init(this)
+        Fast4Android.init(this){
+            logger(DefaultLogger())
+            applicationInitTask(ParallaxBackApplicationTask())
+        }
 
         initNetwork()
 
@@ -38,7 +43,7 @@ class DayDreamApplication : Application() {
             .build()
         Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
 
-        NetworkManager.init("http://10.8.1.136:8080") {
+        NetworkManager.init("http://10.8.1.148:8080") {
             initOkHttp {
                 protocols(Collections.singletonList(Protocol.HTTP_1_1))
                 //解决 https://www.cnblogs.com/myhalo/p/6811472.html

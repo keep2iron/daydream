@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.iqiyi.qigsaw.application'
 
 android {
     compileSdkVersion versions.build.target_sdk
@@ -38,6 +39,7 @@ dependencies {
     //support
     implementation deps.support.app_compat
     implementation deps.support.constraint_layout
+    implementation 'com.google.android.material:material:1.0.0'
 
     implementation deps.rxjava2
     implementation deps.rx_android
@@ -62,6 +64,12 @@ dependencies {
     implementation('io.github.keep2iron:pomelo-log:0.0.2-alpha'){
         changing = true
     }
+    implementation('io.github.keep2iron:fast4android-looplayout:0.0.1'){
+        changing = true
+    }
+    implementation('io.github.keep2iron:fast4android-topbarlayout:0.0.1'){
+        changing = true
+    }
     //fresco version
     implementation 'io.github.keep2iron:pineapple-fresco:0.0.1-fix2'
 
@@ -71,6 +79,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.1.0'
     implementation deps.retrofit.adapter
     implementation group: 'androidx.palette', name: 'palette', version: '1.0.0'
+
+    implementation "com.iqiyi.android.qigsaw:splitcore:1.1.4"
 
     testImplementation deps.test.junit
     androidTestImplementation 'androidx.test:runner:1.1.0'
